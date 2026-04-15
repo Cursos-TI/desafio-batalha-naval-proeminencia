@@ -4,11 +4,13 @@
 // Este código inicial serve como base para o desenvolvimento do sistema de Batalha Naval.
 // Siga os comentários para implementar cada parte do desafio.
 
-int main() {
+// int main() {
     // Nível Novato - Posicionamento dos Navios
     // Sugestão: Declare uma matriz bidimensional para representar o tabuleiro (Ex: int tabuleiro[5][5];).
     // Sugestão: Posicione dois navios no tabuleiro, um verticalmente e outro horizontalmente.
     // Sugestão: Utilize `printf` para exibir as coordenadas de cada parte dos navios.
+
+    
 
     // Nível Aventureiro - Expansão do Tabuleiro e Posicionamento Diagonal
     // Sugestão: Expanda o tabuleiro para uma matriz 10x10.
@@ -36,5 +38,60 @@ int main() {
     // 1 1 1 1 1
     // 0 0 1 0 0
 
-    return 0;
+    // return 0;
+// }
+
+void main () {
+
+    char linha[10] = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'};
+
+    int tabuleiro[10][10] = {
+        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+    };
+
+    tabuleiro[5][3] = 3;
+    tabuleiro[5][4] = 3;
+    tabuleiro[5][5] = 3;
+
+    tabuleiro[2][8] = 3;
+    tabuleiro[3][8] = 3;
+    tabuleiro[4][8] = 3;
+
+    printf( "Tabuleiro Batalha Naval\n");
+    printf("    ");
+    for (int i = 0; i < 10; i++) {
+        printf("%c ", linha[i]);
+    }
+    printf("\n");
+
+    for (int i = 0; i < 10; i++) {
+        switch (i)
+        {
+        case 9:
+            printf(" %d ", i + 1);
+            break;
+        
+        default:
+            printf("  %d ", i + 1);
+            break;
+        }
+        
+        for (int j = 0; j < 10; j++) {
+
+            printf("%d ", tabuleiro[i][j]);
+        }
+        printf("\n");
+    }
+
+
+
 }
