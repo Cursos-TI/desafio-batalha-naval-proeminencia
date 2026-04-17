@@ -58,13 +58,13 @@ void main () {
         {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
     };
 
-    tabuleiro[5][3] = 3;
+    /* tabuleiro[5][3] = 3;
     tabuleiro[5][4] = 3;
     tabuleiro[5][5] = 3;
 
     tabuleiro[2][8] = 3;
     tabuleiro[3][8] = 3;
-    tabuleiro[4][8] = 3;
+    tabuleiro[4][8] = 3; */
 
     printf( "Tabuleiro Batalha Naval\n");
     printf("    ");
@@ -86,6 +86,23 @@ void main () {
         }
         
         for (int j = 0; j < 10; j++) {
+
+            // primeiro navio (horizontal)
+            if (i == 6 && ((j == 3) || (j == 4) || (j == 5))) {
+                tabuleiro[i][j] = 3;
+            }
+            // segundo navio (vertical)
+            if (j == 8 && ((i == 7) || (i == 8) || (i == 9))) {
+                tabuleiro[i][j] = 3;
+            }
+
+            if ((i == 1 && j == 3) || (i == 2 && j == 4) || (i == 3 && j == 5)) {
+                tabuleiro[i][j] = 3;
+            }
+
+            if ((i == 3 && j == 3) || (i == 4 && j == 2) || (i == 5 && j == 1)) {
+                tabuleiro[i][j] = 3;
+            }
 
             printf("%d ", tabuleiro[i][j]);
         }
